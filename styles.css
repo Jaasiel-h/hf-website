@@ -55,7 +55,6 @@ img {
 
 .nav__brand img {
   height: 48px;
-  width: auto;
 }
 
 .nav__menu {
@@ -161,12 +160,6 @@ img {
   padding: 3.5rem 3rem;
 }
 
-.hero__logo {
-  width: clamp(140px, 12vw, 180px);
-  margin-bottom: 1.75rem;
-  filter: drop-shadow(0 12px 24px rgba(12, 30, 22, 0.35));
-}
-
 .hero__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -199,22 +192,6 @@ img {
   border-radius: var(--radius-md);
   padding: 1.75rem;
   border: 1px solid rgba(57, 116, 94, 0.15);
-}
-
-.service__icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 18px;
-  background: rgba(31, 70, 49, 0.12);
-  color: var(--color-forest);
-  display: grid;
-  place-items: center;
-  margin-bottom: 1rem;
-}
-
-.service__icon svg {
-  width: 60%;
-  height: 60%;
 }
 
 .service__item h3 {
