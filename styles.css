@@ -144,7 +144,7 @@ img {
 }
 
 .layout__span-2 {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .section__title {
