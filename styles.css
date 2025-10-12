@@ -452,17 +452,6 @@ textarea:focus {
   .footer__content {
     grid-template-columns: 1fr;
   }
-}
-
-/* Make every top-level panel span full width of the grid */
-.layout > .panel {
-  grid-column: 1 / -1;
-}
-
-/* Prevent Grid from backfilling gaps */
-.layout {
-  grid-auto-flow: row; /* or remove the existing dense value */
-}
 
 }
 
