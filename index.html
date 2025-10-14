@@ -46,29 +46,38 @@
 
         <section id="services" class="services panel layout__full">
             <h2 class="section__title">Nuestros Servicios</h2>
-            <div class="services__grid">
-               
-                <article class="service__item">
-                    <div class="service__icon" aria-hidden="true">
-                        <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 32.5 20.5 22l7 7L42 14.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 38h36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="34" cy="14" r="6" fill="currentColor" opacity="0.18"/></svg>
+            <div class="services__carousel">
+                <button class="services__nav services__nav--prev" type="button" aria-label="Ver servicio anterior">
+                    <span aria-hidden="true">&#8592;</span>
+                </button>
+                <div class="services__viewport">
+                    <div class="services__grid">
+                        <article class="service__item">
+                            <div class="service__icon" aria-hidden="true">
+                                <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M8 16h32v4H8zm5 8h22v4H13zm-5 8h32v4H8z" fill="currentColor"/><path d="M12 8h24a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4Zm0 4v24h24V12H12Z" fill="currentColor" opacity="0.28"/></svg>
+                            </div>
+                            <h3>Estructuración de Inversiones</h3>
+                            <p>Diseñamos operaciones de crédito privado a la medida, con análisis exhaustivo de riesgo y garantías reales alineadas a tus objetivos patrimoniales.</p>
+                        </article>
+                        <article class="service__item">
+                            <div class="service__icon" aria-hidden="true">
+                                <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 32.5 20.5 22l7 7L42 14.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 38h36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="34" cy="14" r="6" fill="currentColor" opacity="0.18"/></svg>
+                            </div>
+                            <h3>Monitoreo Continuo</h3>
+                            <p>Implementamos controles rigurosos y seguimiento mensual de desempeño, asegurando el cumplimiento de obligaciones y la protección del capital.</p>
+                        </article>
+                        <article class="service__item">
+                            <div class="service__icon" aria-hidden="true">
+                                <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 20c0-6.627 5.373-12 12-12 4.955 0 9.222 3.005 11.037 7.3A10 10 0 1 1 38 37H12a2 2 0 0 1-2-2V20Z" fill="currentColor" opacity="0.2"/><path d="M12 28v8h24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12a8 8 0 0 0-8 8v8h16v-8a8 8 0 0 0-8-8Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3>Gestión Patrimonial</h3>
+                            <p>Te acompañamos en la construcción de estrategias integrales de inversión y preservación patrimonial con foco en crecimiento sostenible.</p>
+                        </article>
                     </div>
-                    <h3>Monitoreo Continuo</h3>
-                    <p>Implementamos controles rigurosos y seguimiento mensual de desempeño, asegurando el cumplimiento de obligaciones y la protección del capital como prioridad.</p>
-                </article>
-                <article class="service__item">
-                    <div class="service__icon" aria-hidden="true">
-                        <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 20c0-6.627 5.373-12 12-12 4.955 0 9.222 3.005 11.037 7.3A10 10 0 1 1 38 37H12a2 2 0 0 1-2-2V20Z" fill="currentColor" opacity="0.2"/><path d="M12 28v8h24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12a8 8 0 0 0-8 8v8h16v-8a8 8 0 0 0-8-8Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
-                    </div>
-                    <h3>Gestión Patrimonial</h3>
-                    <p>Te acompañamos en la construcción de estrategias integrales de inversión y preservación patrimonial con foco en crecimiento sostenible.</p>
-                </article>
-                <article class="service__item">
-                    <div class="service__icon" aria-hidden="true">
-                        <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M8 16h32v4H8zm5 8h22v4H13zm-5 8h32v4H8z" fill="currentColor"/><path d="M12 8h24a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4Zm0 4v24h24V12H12Z" fill="currentColor" opacity="0.28"/></svg>
-                    </div>
-                    <h3>Estructuración de Inversiones</h3>
-                    <p>Diseñamos operaciones de crédito privado a la medida, con análisis exhaustivo de riesgo y garantías reales.</p>
-                </article>
+                </div>
+                <button class="services__nav services__nav--next" type="button" aria-label="Ver siguiente servicio">
+                    <span aria-hidden="true">&#8594;</span>
+                </button>
             </div>
         </section>
 
@@ -81,7 +90,7 @@
                     <li>Asignamos el capital en diferentes sectores y geografías para equilibrar riesgo y retorno.</li>
                     <li>Reportamos avances y rendimientos con total transparencia para mantenerte siempre informado.</li>
                 </ul>
-                <h3>Invertir con HF Asesores significa acceder a una estrategia profesional que combina experiencia, gobernanza y acceso a oportunidades exclusivas.</h3>
+                <h3 class="solution__closing">Invertir con HF Asesores significa acceder a una estrategia profesional que combina experiencia, gobernanza y acceso a oportunidades exclusivas.</h3>
             </div>
         </section>
 
