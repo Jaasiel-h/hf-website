@@ -101,6 +101,36 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(element);
   });
 
+  // Services carousel navigation
+  const servicesViewport = document.querySelector('.services__viewport');
+  const servicesPrev = document.querySelector('.services__nav--prev');
+  const servicesNext = document.querySelector('.services__nav--next');
+
+  if (servicesViewport && servicesPrev && servicesNext) {
+    const getScrollStep = () => {
+      const card = servicesViewport.querySelector('.service__item');
+      return card ? card.getBoundingClientRect().width + 20 : servicesViewport.clientWidth * 0.9;
+    };
+
+    const updateServicesNav = () => {
+      const maxScroll = servicesViewport.scrollWidth - servicesViewport.clientWidth;
+      servicesPrev.disabled = servicesViewport.scrollLeft <= 12;
+      servicesNext.disabled = servicesViewport.scrollLeft >= maxScroll - 12;
+    };
+
+    servicesPrev.addEventListener('click', () => {
+      servicesViewport.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    });
+
+    servicesNext.addEventListener('click', () => {
+      servicesViewport.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    });
+
+    servicesViewport.addEventListener('scroll', updateServicesNav, { passive: true });
+    window.addEventListener('resize', updateServicesNav);
+    updateServicesNav();
+  }
+
   // Mobile navigation toggle
   const ensureMobileToggle = () => {
     const existingToggle = document.querySelector('.mobile-menu-toggle');
