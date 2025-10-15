@@ -331,32 +331,138 @@ img {
 .investors__content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 2.5rem;
+}
+
+.investors__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .investors__heading {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--color-forest);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin: 0;
 }
 
-.investors__list {
+.investors__summary {
   margin: 0;
-  padding-left: 1.2rem;
   color: var(--color-muted);
+  max-width: 560px;
 }
 
-.investors__list li + li {
-  margin-top: 0.5rem;
+.investors__journey {
+  position: relative;
+  padding-left: 3.25rem;
+}
+
+.investors__journey::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.25rem;
+  transform: translateX(-50%);
+  width: 4px;
+  background: rgba(31, 70, 49, 0.15);
+  border-radius: 999px;
+}
+
+.journey__progress {
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 0%;
+  background: linear-gradient(180deg, rgba(57, 116, 94, 0.8), var(--color-forest));
+  border-radius: 999px;
+  transition: height 0.4s ease;
+}
+
+.journey__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.journey__step {
+  position: relative;
+  padding-left: 1.75rem;
+  color: var(--color-muted);
+  transition: color 0.3s ease;
+}
+
+.journey__step::before {
+  content: '';
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  transform: translate(-50%, 0);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-cloud);
+  border: 3px solid rgba(31, 70, 49, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(31, 70, 49, 0.12);
+}
+
+.journey__step.is-active {
+  color: var(--color-ink);
+}
+
+.journey__step.is-active::before {
+  transform: translate(-50%, -2px) scale(1.15);
+  border-color: var(--color-forest);
+  background: var(--color-forest);
+  box-shadow: 0 8px 18px rgba(31, 70, 49, 0.25);
+}
+
+.journey__step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.journey__step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(57, 116, 94, 0.1);
+  color: var(--color-forest);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.journey__step-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-forest);
+}
+
+.journey__step-description {
+  margin: 0;
+  max-width: 640px;
 }
 
 .investors__disclaimer {
   font-size: 0.85rem;
   background: rgba(31, 70, 49, 0.08);
   border-radius: var(--radius-md);
-  padding: 1rem 1.2rem;
+  padding: 1.15rem 1.4rem;
   border: 1px solid rgba(31, 70, 49, 0.15);
+  line-height: 1.5;
 }
 
 .founders__grid {
@@ -548,6 +654,23 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .investors__content {
+    gap: 2rem;
+  }
+
+  .investors__journey {
+    padding-left: 2.4rem;
+  }
+
+  .investors__journey::before,
+  .journey__progress {
+    left: 1rem;
+  }
+
+  .journey__step {
+    padding-left: 1.4rem;
+  }
+
   .founders__grid {
     grid-template-columns: 1fr;
   }
@@ -559,10 +682,5 @@ textarea:focus {
   .footer__content {
     grid-template-columns: 1fr;
   }
-  @media (max-width: 768px) {
-  .footer__content {
-    grid-template-columns: 1fr;
-  }
-
 }
 
