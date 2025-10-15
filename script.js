@@ -131,6 +131,46 @@ document.addEventListener('DOMContentLoaded', () => {
     updateServicesNav();
   }
 
+  // Investors journey progress animation
+  const investorsSection = document.getElementById('investors');
+  if (investorsSection) {
+    const progressBar = investorsSection.querySelector('.journey__progress');
+    const steps = Array.from(investorsSection.querySelectorAll('.journey__step'));
+
+    const updateJourneyProgress = () => {
+      if (!progressBar) {
+        return;
+      }
+
+      const sectionHeight = investorsSection.offsetHeight;
+      const sectionTop = investorsSection.offsetTop;
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const distance = scrollY + viewportHeight - sectionTop;
+      const total = sectionHeight + viewportHeight;
+      const ratio = Math.min(Math.max(distance / total, 0), 1);
+      progressBar.style.height = `${ratio * 100}%`;
+    };
+
+    const journeyObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-active');
+        } else {
+          entry.target.classList.remove('is-active');
+        }
+      });
+    }, {
+      threshold: 0.55,
+      rootMargin: '-10% 0px -10% 0px',
+    });
+
+    steps.forEach(step => journeyObserver.observe(step));
+    updateJourneyProgress();
+    window.addEventListener('scroll', updateJourneyProgress, { passive: true });
+    window.addEventListener('resize', updateJourneyProgress);
+  }
+
   // Mobile navigation toggle
   const ensureMobileToggle = () => {
     const existingToggle = document.querySelector('.mobile-menu-toggle');

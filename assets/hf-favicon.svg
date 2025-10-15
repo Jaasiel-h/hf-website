@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-labelledby="favTitle favDesc">
+  <title id="favTitle">HF favicon</title>
+  <desc id="favDesc">Isotipo redondo verde con las iniciales HF en blanco</desc>
+  <defs>
+    <linearGradient id="favGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f4631" />
+      <stop offset="100%" stop-color="#2f7a62" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" fill="url(#favGradient)" />
+  <path d="M13 16h4v6h10v-6h4v18h-4v-7H17v7h-4V16Zm21 0h11v4h-7v4h6v4h-6v6h7v4H34V16Z" fill="#ffffff" />
+</svg>

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220">
-  <g fill="#1F4631">
-    <path d="M160 20c3.9 0 7 3.1 7 7v46h33.6c6.6 0 10.4 7.7 6.4 12.9l-24.3 31.5a7.5 7.5 0 0 1-11.9-9.2l15.7-20.3H167v56h37.6c6.6 0 10.4 7.7 6.4 12.9l-24.3 31.5a7.5 7.5 0 0 1-11.9-9.2l15.7-20.3H167v36h-14v-36h-24.5l15.7 20.3a7.5 7.5 0 0 1-11.9 9.2l-24.3-31.5c-4-5.2-.2-12.9 6.4-12.9H153v-56h-19.5l15.7 20.3a7.5 7.5 0 0 1-11.9 9.2l-24.3-31.5c-4-5.2-.2-12.9 6.4-12.9H153V27c0-3.9 3.1-7 7-7Z"/>
-    <text x="160" y="158" font-family="'Times New Roman', serif" font-size="62" text-anchor="middle" letter-spacing="4">HF</text>
-    <text x="160" y="205" font-family="'Times New Roman', serif" font-size="48" text-anchor="middle" letter-spacing="6">ASESORES</text>
-  </g>
-</svg>
