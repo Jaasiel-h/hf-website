@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.message,
       ].join('%0D%0A');
 
-      window.location.href = `mailto:contacto@hfasesores.mx?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = `mailto:contacto@hfasesores.com?subject=${encodeURIComponent(subject)}&body=${body}`;
       alert('Gracias por contactarnos. Un especialista se pondrá en contacto contigo pronto.');
       contactForm.reset();
     });
