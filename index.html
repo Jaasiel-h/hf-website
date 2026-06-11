@@ -12,121 +12,184 @@
     <link rel="icon" href="assets/HFLogos-12.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="siteHeader">
         <nav class="nav">
             <a class="nav__brand" href="#hero">
                 <img src="assets/HFLogos-11.png" alt="HF Asesores Patrimoniales" width="130" height="102">
             </a>
-            <ul class="nav__menu">
+            <button class="nav__toggle" id="navToggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu" id="navMenu">
                 <li><a href="#hero" class="nav__link">Inicio</a></li>
                 <li><a href="#services" class="nav__link">Servicios</a></li>
                 <li><a href="#solutions" class="nav__link">Modelo</a></li>
                 <li><a href="#investors" class="nav__link">Inversionistas</a></li>
                 <li><a href="#founders" class="nav__link">Fundadores</a></li>
                 <li><a href="#cases" class="nav__link">Casos</a></li>
-                <li><a href="#contact" class="nav__link">Contacto</a></li>
+                <li><a href="#contact" class="nav__link nav__link--cta">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="layout">
-        <section id="hero" class="hero panel layout__full">
-            <div class="hero__content">
-                <img class="hero__logo" src="assets/HFLogos-06.png" alt="HF Asesores Patrimoniales" width="160" height="110" loading="lazy">
-                <p class="hero__eyebrow">Estrategias patrimoniales con resultados medibles</p>
-                <h1 class="hero__title">Optimizamos tu capital y potenciamos inversiones respaldadas por activos reales.</h1>
-                <p class="hero__subtitle">Acompañamos a empresarios e inversionistas en la estructuración, ejecución y administración de portafolios de deuda privada con visibilidad y control de riesgos.</p>
-                <a href="#contact" class="btn btn--primary">Comenzar</a>
-            </div>
-        </section>
-
-        <section id="services" class="services panel layout__full">
-            <h2 class="section__title">Nuestros Servicios</h2>
-            <div class="services__carousel">
-                <button class="services__nav services__nav--prev" type="button" aria-label="Ver servicio anterior">
-                    <span aria-hidden="true">&#8592;</span>
-                </button>
-                <div class="services__viewport">
-                    <div class="services__grid">
-                         <article class="service__item">
-                            <div class="service__icon" aria-hidden="true">
-                                <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 20c0-6.627 5.373-12 12-12 4.955 0 9.222 3.005 11.037 7.3A10 10 0 1 1 38 37H12a2 2 0 0 1-2-2V20Z" fill="currentColor" opacity="0.2"/><path d="M12 28v8h24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12a8 8 0 0 0-8 8v8h16v-8a8 8 0 0 0-8-8Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
-                            </div>
-                            <h3>Gestión Patrimonial</h3>
-                            <p>Te acompañamos en la construcción de estrategias integrales de inversión y preservación patrimonial con foco en crecimiento sostenible.</p>
-                        </article>
-                        <article class="service__item">
-                            <div class="service__icon" aria-hidden="true">
-                                <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M8 16h32v4H8zm5 8h22v4H13zm-5 8h32v4H8z" fill="currentColor"/><path d="M12 8h24a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4Zm0 4v24h24V12H12Z" fill="currentColor" opacity="0.28"/></svg>
-                            </div>
-                            <h3>Estructuración de Inversiones</h3>
-                            <p>Diseñamos operaciones de crédito privado a la medida, con análisis exhaustivo de riesgo y garantías reales alineadas a tus objetivos patrimoniales.</p>
-                        </article>
-                        <article class="service__item">
-                            <div class="service__icon" aria-hidden="true">
-                                <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 32.5 20.5 22l7 7L42 14.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 38h36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="34" cy="14" r="6" fill="currentColor" opacity="0.18"/></svg>
-                            </div>
-                            <h3>Monitoreo Continuo</h3>
-                            <p>Implementamos controles rigurosos y seguimiento mensual de desempeño, asegurando el cumplimiento de obligaciones y la protección del capital.</p>
-                        </article>
-                       
+    <main>
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="hero__glow" aria-hidden="true"></div>
+            <div class="hero__inner">
+                <p class="hero__eyebrow load-in" style="--d:0">Estrategias patrimoniales con resultados medibles</p>
+                <h1 class="hero__title load-in" style="--d:1">Optimizamos tu capital y potenciamos inversiones respaldadas por <span class="hero__accent">activos reales</span>.</h1>
+                <p class="hero__subtitle load-in" style="--d:2">Acompañamos a empresarios e inversionistas en la estructuración, ejecución y administración de portafolios de deuda privada con visibilidad y control de riesgos.</p>
+                <div class="hero__actions load-in" style="--d:3">
+                    <a href="#contact" class="btn btn--light">Comenzar a invertir</a>
+                    <a href="#solutions" class="btn btn--ghost">Conocer el modelo</a>
+                </div>
+                <div class="hero__stats load-in" style="--d:4">
+                    <div class="stat">
+                        <span class="stat__value"><span class="counter" data-target="46" data-prefix="$" data-suffix="M">$0M</span></span>
+                        <span class="stat__label">MXN estructurados en deuda privada</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__value"><span class="counter" data-target="16" data-suffix="%">0%</span></span>
+                        <span class="stat__label">Rendimiento anual en operaciones recientes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__value"><span class="counter" data-target="190" data-prefix="$" data-suffix="M">$0M</span></span>
+                        <span class="stat__label">MXN en garantías reales valuadas</span>
                     </div>
                 </div>
-                <button class="services__nav services__nav--next" type="button" aria-label="Ver siguiente servicio">
-                    <span aria-hidden="true">&#8594;</span>
-                </button>
             </div>
         </section>
 
-        <section id="solutions" class="solutions panel layout__full">
-            <h2 class="section__title">Nuestro Modelo de Inversión</h2>
-            <div class="solution__card">
-                <p>En HF Asesores trabajamos con capital a partir de <strong>$1,000,000 MXN</strong>, que integramos a un portafolio diversificado de crédito privado y oportunidades respaldadas por activos reales.</p>
-                <ul class="solution__list">
-                    <li>Estructuramos vehículos con contratos claros, garantías sólidas y monitoreo permanente.</li>
-                    <li>Asignamos el capital en diferentes sectores y geografías para equilibrar riesgo y retorno.</li>
-                    <li>Reportamos avances y rendimientos con total transparencia para mantenerte siempre informado.</li>
-                </ul>
-                <h3 class="solution__closing">Invertir con HF Asesores significa acceder a una estrategia profesional que combina experiencia, gobernanza y acceso a oportunidades exclusivas.</h3>
-            </div>
-        </section>
+        <div class="layout">
+            <!-- SERVICIOS -->
+            <section id="services" class="section">
+                <div class="section__head reveal">
+                    <p class="section__eyebrow">Lo que hacemos</p>
+                    <h2 class="section__title">Nuestros Servicios</h2>
+                </div>
+                <div class="services__grid">
+                    <article class="service__item reveal" style="--d:0">
+                        <div class="service__icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 20c0-6.627 5.373-12 12-12 4.955 0 9.222 3.005 11.037 7.3A10 10 0 1 1 38 37H12a2 2 0 0 1-2-2V20Z" fill="currentColor" opacity="0.2"/><path d="M12 28v8h24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12a8 8 0 0 0-8 8v8h16v-8a8 8 0 0 0-8-8Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>Gestión Patrimonial</h3>
+                        <p>Te acompañamos en la construcción de estrategias integrales de inversión y preservación patrimonial con foco en crecimiento sostenible.</p>
+                    </article>
+                    <article class="service__item reveal" style="--d:1">
+                        <div class="service__icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M8 16h32v4H8zm5 8h22v4H13zm-5 8h32v4H8z" fill="currentColor"/><path d="M12 8h24a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4Zm0 4v24h24V12H12Z" fill="currentColor" opacity="0.28"/></svg>
+                        </div>
+                        <h3>Estructuración de Inversiones</h3>
+                        <p>Diseñamos operaciones de crédito privado a la medida, con análisis exhaustivo de riesgo y garantías reales alineadas a tus objetivos patrimoniales.</p>
+                    </article>
+                    <article class="service__item reveal" style="--d:2">
+                        <div class="service__icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" role="img" focusable="false"><path d="M10 32.5 20.5 22l7 7L42 14.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 38h36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="34" cy="14" r="6" fill="currentColor" opacity="0.18"/></svg>
+                        </div>
+                        <h3>Monitoreo Continuo</h3>
+                        <p>Implementamos controles rigurosos y seguimiento mensual de desempeño, asegurando el cumplimiento de obligaciones y la protección del capital.</p>
+                    </article>
+                </div>
+            </section>
 
-        <section id="investors" class="investors panel layout__full">
-            <h2 class="section__title">Para Inversionistas</h2>
-            <div class="investors__content">
-                <div class="investors__intro">
-                    <h3 class="investors__heading">Nuestro recorrido</h3>
-                    <p class="investors__summary">Acompañamos tu capital a través de un proceso transparente que valida riesgos, estructura operaciones sólidas y mantiene la visibilidad de cada proyecto.</p>
+            <!-- MODELO + CALCULADORA -->
+            <section id="solutions" class="section">
+                <div class="section__head reveal">
+                    <p class="section__eyebrow">Cómo trabajamos</p>
+                    <h2 class="section__title">Nuestro Modelo de Inversión</h2>
+                </div>
+                <div class="solutions__split">
+                    <div class="solution__card reveal">
+                        <p>En HF Asesores trabajamos con capital a partir de <strong>$1,000,000 MXN</strong>, que integramos a un portafolio diversificado de crédito privado y oportunidades respaldadas por activos reales.</p>
+                        <ul class="solution__list">
+                            <li>Estructuramos vehículos con contratos claros, garantías sólidas y monitoreo permanente.</li>
+                            <li>Asignamos el capital en diferentes sectores y geografías para equilibrar riesgo y retorno.</li>
+                            <li>Reportamos avances y rendimientos con total transparencia para mantenerte siempre informado.</li>
+                        </ul>
+                        <p class="solution__closing">Invertir con HF Asesores significa acceder a una estrategia profesional que combina experiencia, gobernanza y acceso a oportunidades exclusivas.</p>
+                    </div>
+
+                    <div class="calculator reveal" style="--d:1">
+                        <h3 class="calculator__title">Simula tu inversión</h3>
+                        <p class="calculator__hint">Ejemplo ilustrativo con una tasa del 16% anual, intereses pagados mensualmente y capital al vencimiento.</p>
+
+                        <div class="calculator__field">
+                            <div class="calculator__field-head">
+                                <label for="calcAmount">Capital a invertir</label>
+                                <output class="calculator__amount" id="calcAmountOut">$1,000,000 MXN</output>
+                            </div>
+                            <input type="range" id="calcAmount" min="1000000" max="50000000" step="500000" value="1000000" aria-describedby="calcAmountOut">
+                            <div class="calculator__range-labels"><span>$1M</span><span>$50M</span></div>
+                        </div>
+
+                        <div class="calculator__field">
+                            <span class="calculator__label" id="termLabel">Plazo</span>
+                            <div class="calculator__terms" role="group" aria-labelledby="termLabel">
+                                <button type="button" class="term-btn" data-months="12">12 meses</button>
+                                <button type="button" class="term-btn" data-months="18">18 meses</button>
+                                <button type="button" class="term-btn is-active" data-months="24">24 meses</button>
+                            </div>
+                        </div>
+
+                        <div class="calculator__results">
+                            <div class="result">
+                                <span class="result__label">Interés mensual</span>
+                                <span class="result__value" id="resMonthly">$13,333</span>
+                            </div>
+                            <div class="result">
+                                <span class="result__label">Interés total</span>
+                                <span class="result__value" id="resTotal">$320,000</span>
+                            </div>
+                            <div class="result result--highlight">
+                                <span class="result__label">Capital + intereses</span>
+                                <span class="result__value" id="resFinal">$1,320,000</span>
+                            </div>
+                        </div>
+                        <p class="calculator__disclaimer">Cálculo ilustrativo. No constituye una oferta ni garantía de rendimientos; cada operación se estructura y documenta de forma individual.</p>
+                        <a href="#contact" class="btn btn--primary calculator__cta">Hablar con un asesor</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INVERSIONISTAS -->
+            <section id="investors" class="section">
+                <div class="section__head reveal">
+                    <p class="section__eyebrow">Para inversionistas</p>
+                    <h2 class="section__title">Nuestro recorrido</h2>
+                    <p class="section__summary">Acompañamos tu capital a través de un proceso transparente que valida riesgos, estructura operaciones sólidas y mantiene la visibilidad de cada proyecto.</p>
                 </div>
                 <div class="investors__journey">
                     <div class="journey__progress" aria-hidden="true"></div>
                     <ol class="journey__steps">
-                        <li class="journey__step">
+                        <li class="journey__step reveal" style="--d:0">
                             <div class="journey__step-header">
                                 <span class="journey__step-index">1</span>
                                 <h4 class="journey__step-title">Evaluación integral</h4>
                             </div>
                             <p class="journey__step-description">Analizamos el riesgo crediticio de cada solicitante, validamos el flujo de la operación y autenticamos las garantías que respaldan el financiamiento.</p>
                         </li>
-                        <li class="journey__step">
+                        <li class="journey__step reveal" style="--d:1">
                             <div class="journey__step-header">
                                 <span class="journey__step-index">2</span>
                                 <h4 class="journey__step-title">Estructura a la medida</h4>
                             </div>
                             <p class="journey__step-description">Definimos derechos, obligaciones y covenants, estableciendo contratos claros y vehículos fiduciarios que protegen el capital invertido.</p>
                         </li>
-                        <li class="journey__step">
+                        <li class="journey__step reveal" style="--d:2">
                             <div class="journey__step-header">
                                 <span class="journey__step-index">3</span>
                                 <h4 class="journey__step-title">Monitoreo continuo</h4>
                             </div>
                             <p class="journey__step-description">Supervisamos la operación con reportes mensuales, visitamos proyectos y activamos alertas tempranas frente a desviaciones o incumplimientos.</p>
                         </li>
-                        <li class="journey__step">
+                        <li class="journey__step reveal" style="--d:3">
                             <div class="journey__step-header">
                                 <span class="journey__step-index">4</span>
                                 <h4 class="journey__step-title">Diversificación estratégica</h4>
@@ -135,89 +198,128 @@
                         </li>
                     </ol>
                 </div>
-                <div class="investors__disclaimer">
+                <div class="investors__disclaimer reveal">
                     <p><strong>Disclaimer:</strong> Las inversiones implican riesgo; los rendimientos no son garantizados. Cada oportunidad debe evaluarse con base en tu perfil de riesgo. Rendimientos pasados no garantizan resultados futuros.</p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="founders" class="founders panel layout__full">
-            <h2 class="section__title">Nuestros Fundadores</h2>
-            <div class="founders__grid">
-                <article class="founder__card">
-                    <h3>Josue Huitrón</h3>
-                    <p class="founder__role">Cofundador</p>
-                    <p class="founder__bio">Más de 6 años de experiencia como inversionista independiente y asesor patrimonial, guiando a familias y empresas en la diversificación de su capital.</p>
-                </article>
-                <article class="founder__card">
-                    <h3>Jaasiel Huitrón</h3>
-                    <p class="founder__role">Cofundador</p>
-                    <p class="founder__bio">Maestría en Finanzas por la Universidad Bocconi con especialización en crédito privado y capital de desarrollo.</p>
-                </article>
-            </div>
-        </section>
+            <!-- FUNDADORES -->
+            <section id="founders" class="section">
+                <div class="section__head reveal">
+                    <p class="section__eyebrow">Quiénes somos</p>
+                    <h2 class="section__title">Nuestros Fundadores</h2>
+                </div>
+                <div class="founders__grid">
+                    <article class="founder__card reveal" style="--d:0">
+                        <div class="founder__initials" aria-hidden="true">JH</div>
+                        <h3>Josue Huitrón</h3>
+                        <p class="founder__role">Cofundador</p>
+                        <p class="founder__bio">Más de 6 años de experiencia como inversionista independiente y asesor patrimonial, guiando a familias y empresas en la diversificación de su capital.</p>
+                    </article>
+                    <article class="founder__card reveal" style="--d:1">
+                        <div class="founder__initials" aria-hidden="true">JH</div>
+                        <h3>Jaasiel Huitrón</h3>
+                        <p class="founder__role">Cofundador</p>
+                        <p class="founder__bio">Maestría en Finanzas por la Universidad Bocconi con especialización en crédito privado y capital de desarrollo.</p>
+                    </article>
+                </div>
+            </section>
 
-        <section id="cases" class="cases panel layout__full">
-            <h2 class="section__title">Casos de Éxito</h2>
-            <div class="cases__grid">
-                <article class="case__card">
-                    <h3>IWA Hotel &amp; Residences (Mazatlán)</h3>
-                    <p class="case__description">Estructuración de deuda privada por $36,000,000 MXN para completar las torres 3 y 4 del desarrollo.</p>
-                    <ul class="case__details">
-                        <li><strong>Sector:</strong> Desarrollo Inmobiliario.</li>
-                        <li><strong>Términos:</strong> 16% anual, intereses mensuales, capital al vencimiento a 24 meses.</li>
-                        <li><strong>Garantía:</strong> Lotes Salaar Island Living valuados en $72M MXN.</li>
-                        <li><strong>Vehículo:</strong> Fideicomiso de garantía.</li>
+            <!-- CASOS -->
+            <section id="cases" class="section">
+                <div class="section__head reveal">
+                    <p class="section__eyebrow">Track record</p>
+                    <h2 class="section__title">Casos de Éxito</h2>
+                </div>
+                <div class="cases reveal">
+                    <div class="cases__tabs" role="tablist" aria-label="Casos de éxito">
+                        <button class="cases__tab is-active" id="tab-iwa" role="tab" aria-selected="true" aria-controls="panel-iwa" type="button">IWA Hotel &amp; Residences</button>
+                        <button class="cases__tab" id="tab-mdy" role="tab" aria-selected="false" aria-controls="panel-mdy" type="button">MDY Puerto Vallarta</button>
+                    </div>
+
+                    <div class="cases__panel is-active" id="panel-iwa" role="tabpanel" aria-labelledby="tab-iwa">
+                        <div class="case__header">
+                            <h3>IWA Hotel &amp; Residences <span class="case__location">Mazatlán, Sinaloa</span></h3>
+                            <p class="case__description">Estructuración de deuda privada para completar las torres 3 y 4 del desarrollo.</p>
+                        </div>
+                        <div class="case__metrics">
+                            <div class="metric"><span class="metric__value">$36M</span><span class="metric__label">MXN estructurados</span></div>
+                            <div class="metric"><span class="metric__value">16%</span><span class="metric__label">Rendimiento anual</span></div>
+                            <div class="metric"><span class="metric__value">24 meses</span><span class="metric__label">Plazo, capital al vencimiento</span></div>
+                            <div class="metric"><span class="metric__value">$72M</span><span class="metric__label">MXN en garantías (Lotes Salaar Island Living)</span></div>
+                        </div>
+                        <div class="case__footer">
+                            <span class="case__pill">Desarrollo Inmobiliario</span>
+                            <span class="case__pill">Fideicomiso de garantía</span>
+                            <span class="case__pill">Intereses mensuales</span>
+                        </div>
+                    </div>
+
+                    <div class="cases__panel" id="panel-mdy" role="tabpanel" aria-labelledby="tab-mdy" hidden>
+                        <div class="case__header">
+                            <h3>MDY <span class="case__location">Puerto Vallarta, Jalisco</span></h3>
+                            <p class="case__description">Ronda de deuda privada para completar un desarrollo de 53 unidades.</p>
+                        </div>
+                        <div class="case__metrics">
+                            <div class="metric"><span class="metric__value">$10M</span><span class="metric__label">MXN estructurados</span></div>
+                            <div class="metric"><span class="metric__value">16%</span><span class="metric__label">Rendimiento anual</span></div>
+                            <div class="metric"><span class="metric__value">24 meses</span><span class="metric__label">Plazo, capital al vencimiento</span></div>
+                            <div class="metric"><span class="metric__value">$118.1M</span><span class="metric__label">MXN en garantías (predio del desarrollo)</span></div>
+                        </div>
+                        <div class="case__footer">
+                            <span class="case__pill">Desarrollo Inmobiliario</span>
+                            <span class="case__pill">Fideicomiso de garantía</span>
+                            <span class="case__pill">Intereses mensuales</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACTO -->
+            <section id="contact" class="section contact reveal">
+                <div class="contact__intro">
+                    <p class="section__eyebrow section__eyebrow--light">Da el primer paso</p>
+                    <h2 class="contact__title">Comenzar a Invertir</h2>
+                    <p class="contact__text">Cuéntanos sobre tus objetivos y un especialista se pondrá en contacto contigo para diseñar una estrategia a tu medida.</p>
+                    <ul class="contact__points">
+                        <li>Sin compromiso y con total confidencialidad</li>
+                        <li>Atención directa de los fundadores</li>
                     </ul>
-                </article>
-                <article class="case__card">
-                    <h3>MDY (Puerto Vallarta)</h3>
-                    <p class="case__description">Ronda de deuda privada por $10,000,000 MXN para completar desarrollo de 53 unidades.</p>
-                    <ul class="case__details">
-                        <li><strong>Sector:</strong> Desarrollo Inmobiliario.</li>
-                        <li><strong>Términos:</strong> 16% anual, intereses mensuales, capital al vencimiento a 24 meses.</li>
-                        <li><strong>Garantía:</strong> Predio del desarrollo valuados en  $118.1M MXN.</li>
-                        <li><strong>Vehículo:</strong> Fideicomiso de garantía.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section id="contact" class="contact panel layout__full">
-            <h2 class="section__title">Comenzar a Invertir</h2>
-            <form class="contact__form" id="contactForm">
-                <div class="form__group">
-                    <label for="name">Nombre completo</label>
-                    <input type="text" id="name" name="name" required>
                 </div>
-                <div class="form__group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form__group">
-                    <label for="phone">Teléfono</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form__group">
-                    <label for="type">Soy</label>
-                    <select id="type" name="type" required>
-                        <option value="">Seleccionar...</option>
-                        <option value="inversionista">Inversionista</option>
-                        <option value="operador">Operador/Empresa</option>
-                        <option value="aliado">Aliado/Ejecutivo</option>
-                    </select>
-                </div>
-                <div class="form__group form__group--full">
-                    <label for="message">¿Cómo podemos ayudarte?</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <label class="checkbox__label">
-                    <input type="checkbox" id="privacy" name="privacy" required>
-                    <span>Acepto el aviso de privacidad y los términos y condiciones.</span>
-                </label>
-                <button type="submit" class="btn btn--primary">Enviar información</button>
-            </form>
-        </section>
+                <form class="contact__form" id="contactForm" novalidate>
+                    <div class="form__group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel">
+                    </div>
+                    <div class="form__group">
+                        <label for="type">Soy</label>
+                        <select id="type" name="type" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="inversionista">Inversionista</option>
+                            <option value="operador">Operador/Empresa</option>
+                            <option value="aliado">Aliado/Ejecutivo</option>
+                        </select>
+                    </div>
+                    <div class="form__group form__group--full">
+                        <label for="message">¿Cómo podemos ayudarte?</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <label class="checkbox__label form__group--full">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <span>Acepto el <a href="./privacy.html">aviso de privacidad</a> y los <a href="./terms.html">términos y condiciones</a>.</span>
+                    </label>
+                    <button type="submit" class="btn btn--primary form__group--full">Enviar información</button>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
