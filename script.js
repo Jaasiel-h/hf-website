@@ -105,14 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Investment calculator ---------- */
   const amountInput = document.getElementById('calcAmount');
-  const amountOut = document.getElementById('calcAmountOut');
+  const amountOut  = document.getElementById('calcAmountOut');
+  const rateInput  = document.getElementById('calcRate');
+  const rateOut    = document.getElementById('calcRateOut');
   const termButtons = document.querySelectorAll('.term-btn');
   const resMonthly = document.getElementById('resMonthly');
-  const resTotal = document.getElementById('resTotal');
-  const resFinal = document.getElementById('resFinal');
+  const resTotal   = document.getElementById('resTotal');
+  const resFinal   = document.getElementById('resFinal');
 
-  if (amountInput && amountOut && resMonthly && resTotal && resFinal) {
-    const ANNUAL_RATE = 0.16;
+  if (amountInput && amountOut && rateInput && rateOut && resMonthly && resTotal && resFinal) {
     let months = 24;
 
     const mxn = value =>
@@ -122,27 +123,31 @@ document.addEventListener('DOMContentLoaded', () => {
         maximumFractionDigits: 0,
       }).format(value);
 
-    const updateSliderFill = () => {
-      const min = Number(amountInput.min);
-      const max = Number(amountInput.max);
-      const value = Number(amountInput.value);
-      const fill = ((value - min) / (max - min)) * 100;
-      amountInput.style.setProperty('--fill', `${fill}%`);
+    const updateSliderFill = (input) => {
+      const min   = Number(input.min);
+      const max   = Number(input.max);
+      const value = Number(input.value);
+      const fill  = ((value - min) / (max - min)) * 100;
+      input.style.setProperty('--fill', `${fill}%`);
     };
 
     const recalc = () => {
-      const principal = Number(amountInput.value);
-      const monthlyInterest = (principal * ANNUAL_RATE) / 12;
-      const totalInterest = monthlyInterest * months;
+      const principal  = Number(amountInput.value);
+      const annualRate = Number(rateInput.value) / 100;
+      const monthlyInterest = (principal * annualRate) / 12;
+      const totalInterest   = monthlyInterest * months;
 
       amountOut.textContent = `${mxn(principal)} MXN`;
+      rateOut.textContent   = `${Number(rateInput.value).toFixed(1).replace('.0', '')}%`;
       resMonthly.textContent = mxn(monthlyInterest);
-      resTotal.textContent = mxn(totalInterest);
-      resFinal.textContent = mxn(principal + totalInterest);
-      updateSliderFill();
+      resTotal.textContent   = mxn(totalInterest);
+      resFinal.textContent   = mxn(principal + totalInterest);
+      updateSliderFill(amountInput);
+      updateSliderFill(rateInput);
     };
 
     amountInput.addEventListener('input', recalc);
+    rateInput.addEventListener('input', recalc);
 
     termButtons.forEach(btn => {
       btn.addEventListener('click', () => {
