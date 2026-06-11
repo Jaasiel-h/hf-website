@@ -118,7 +118,7 @@
 
                     <div class="calculator reveal" style="--d:1">
                         <h3 class="calculator__title">Simula tu inversión</h3>
-                        <p class="calculator__hint">Ejemplo ilustrativo con una tasa del 16% anual, intereses pagados mensualmente y capital al vencimiento.</p>
+                        <p class="calculator__hint">Ejemplo ilustrativo con tasa anual seleccionable, intereses pagados mensualmente y capital al vencimiento.</p>
 
                         <div class="calculator__field">
                             <div class="calculator__field-head">
@@ -127,6 +127,15 @@
                             </div>
                             <input type="range" id="calcAmount" min="1000000" max="50000000" step="500000" value="1000000" aria-describedby="calcAmountOut">
                             <div class="calculator__range-labels"><span>$1M</span><span>$50M</span></div>
+                        </div>
+
+                        <div class="calculator__field">
+                            <div class="calculator__field-head">
+                                <label for="calcRate">Tasa anual</label>
+                                <output class="calculator__amount" id="calcRateOut">9%</output>
+                            </div>
+                            <input type="range" id="calcRate" min="9" max="14" step="0.5" value="9" aria-describedby="calcRateOut">
+                            <div class="calculator__range-labels"><span>9%</span><span>14%</span></div>
                         </div>
 
                         <div class="calculator__field">
