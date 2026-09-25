@@ -266,9 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
         '',
         `${t.message}:`,
         data.message,
-      ].join('%0D%0A');
+      ].join('\r\n');
 
-      window.location.href = `mailto:contacto@hfasesores.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = `mailto:contacto@hfasesores.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       alert(t.thanks);
       contactForm.reset();
     });
