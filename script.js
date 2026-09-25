@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isEnglish = document.documentElement.lang === 'en';
 
   /* ---------- Header state on scroll ---------- */
   const updateHeader = () => {
@@ -220,19 +221,31 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Contact form ---------- */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    const t = isEnglish ? {
+      required: 'Please fill in all required fields.',
+      invalidEmail: 'Please enter a valid email address.',
+      thanks: 'Thank you for contacting us. A specialist will be in touch with you shortly.',
+      name: 'NAME', phone: 'PHONE', type: 'TYPE', message: 'MESSAGE', notProvided: 'Not provided',
+    } : {
+      required: 'Por favor completa todos los campos requeridos.',
+      invalidEmail: 'Por favor ingresa un email válido.',
+      thanks: 'Gracias por contactarnos. Un especialista se pondrá en contacto contigo pronto.',
+      name: 'NOMBRE', phone: 'TELÉFONO', type: 'TIPO', message: 'MENSAJE', notProvided: 'No especificado',
+    };
+
     contactForm.addEventListener('submit', event => {
       event.preventDefault();
       const formData = new FormData(contactForm);
       const data = Object.fromEntries(formData.entries());
 
       if (!data.name || !data.email || !data.message || !data.privacy || !data.type) {
-        alert('Por favor completa todos los campos requeridos.');
+        alert(t.required);
         return;
       }
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(data.email)) {
-        alert('Por favor ingresa un email válido.');
+        alert(t.invalidEmail);
         return;
       }
 
@@ -246,17 +259,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const subject = `${data.type.charAt(0).toUpperCase() + data.type.slice(1)} - ${data.name} - HF Asesores`;
       const body = [
-        `NOMBRE: ${data.name}`,
+        `${t.name}: ${data.name}`,
         `EMAIL: ${data.email}`,
-        `TELÉFONO: ${data.phone || 'No especificado'}`,
-        `TIPO: ${data.type}`,
+        `${t.phone}: ${data.phone || t.notProvided}`,
+        `${t.type}: ${data.type}`,
         '',
-        'MENSAJE:',
+        `${t.message}:`,
         data.message,
       ].join('%0D%0A');
 
       window.location.href = `mailto:contacto@hfasesores.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      alert('Gracias por contactarnos. Un especialista se pondrá en contacto contigo pronto.');
+      alert(t.thanks);
       contactForm.reset();
     });
   }
