@@ -156,6 +156,20 @@ img { max-width: 100%; height: auto; display: block; }
 .nav__link--cta::after { display: none; }
 .nav__link--cta:hover { color: #fff; background: var(--color-sage); transform: translateY(-1px); }
 
+.nav__link--lang {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-forest);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.nav__link--lang::after { display: none; }
+.nav__link--lang:hover { border-color: var(--color-sage); color: var(--color-sage); }
+
 /* Hamburger */
 .nav__toggle {
   display: none;
@@ -1082,6 +1096,7 @@ textarea { resize: vertical; }
   .nav__link { display: block; padding: 0.9rem 0.25rem; }
   .nav__link::after { display: none; }
   .nav__link--cta { text-align: center; }
+  .nav__link--lang { border: none; border-radius: 0; padding: 0.9rem 0.25rem; font-size: 0.95rem; }
 
   .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
   .hero__stats { grid-template-columns: 1fr; gap: 1.25rem; }
